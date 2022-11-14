@@ -1,5 +1,4 @@
-﻿
-using Iterator.Demo;
+﻿using Iterator.Demo;
 
 var persons = new Aggregate<Person>();
 persons[0] = new Person("John", 30);
