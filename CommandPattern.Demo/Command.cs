@@ -30,20 +30,20 @@ public class OrderCommand : ICommand
 
 public class InventoryCommand : ICommand
 {
-    private readonly IProxy<Inventory> orderProxy;
+    private readonly IProxy<Inventory> inventoryProxy;
 
-    public InventoryCommand(IProxy<Inventory> orderProxy)
+    public InventoryCommand(IProxy<Inventory> inventoryProxy)
     {
-        this.orderProxy = orderProxy;
+        this.inventoryProxy = inventoryProxy;
     }
 
     public bool Execute(IMessage message)
     {
-        return orderProxy.Create((Inventory)message);
+        return inventoryProxy.Create((Inventory)message);
     }
 
     public bool Rollback(IMessage message)
     {
-        return orderProxy.Delete((Inventory)message);
+        return inventoryProxy.Delete((Inventory)message);
     }
 }
